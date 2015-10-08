@@ -3,7 +3,8 @@ echo 'hello friend!';
 ini_set('memory_limit', '-1');
 error_reporting(0);
 echo "starting...\n";
-myFunction('https://api.jivesoftware.com/analytics/v2/export/activity/lastday?count=500');
+$url = 'CHANGE THIS TO YOUR API LINK';
+myFunction($url);
 
 echo '<br/>done';
 
@@ -44,7 +45,7 @@ function CallAPI($method, $url, $data = false, $header=null)
     return $result;
 }
 function getToken(){
-$token = CallAPI('POST','https://api.jivesoftware.com/analytics/v1/auth/login?clientId=44miyqhrssdwsel069q43kybk64r10n4.i&clientSecret=mwc0et7xfia4d3jrb7b62ybshsxcbnlt.s');
+$token = CallAPI('POST','');
 
 return array("Authorization: $token");
 
